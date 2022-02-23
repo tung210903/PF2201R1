@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="A" placeholder="a">
+    <input type="text" id="B" placeholder="b">
+    <button onclick="nhap()">Kết quả:</button>
+    <p id="kq"></p>
+    <script>
+        function nhap(){
+            let a = document.getElementById("A").value;
+            let b = document.getElementById("B").value;
+            let c = b-a+1 ;
+            document.getElementById("kq").innerHTML= c;
+
+        }
+    </script>
+</body>
+</html>
