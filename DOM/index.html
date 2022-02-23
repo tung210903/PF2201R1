@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <!-- <input type="text" id="st1" placeholder="Nhập vào số thứ nhất">
+    <input type="text" id="st2" placeholder="Nhập vào số thứ hai">
+    <button onclick="tinh()">Tính </button>
+    <p id="kq"></p>
+    <script>
+        function tinh(){
+            let a = document.getElementById("st1").value
+            let b = document.getElementById("st2").value
+            document.getElementById("kq").innerHTML=a+b
+        }
+    </script> -->
+
+
+
+    <!-- <input type="text" name="" id="name">
+    <input type="text" name="" id="age">
+    <input type="text" name="" id="address">
+    <h1 id="kq"></h1>
+    <button onclick="show()">Ấn đi</button>
+    <button onclick="call()">Ấn vào</button>
+    <script>
+        function show(){
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let address = document.getElementById("address").value;
+            document.getElementById("kq").innerHTML= name + "" + age + " tuổi ở " + address
+        }
+
+        function call(){
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let address = document.getElementById("address").value;
+            let a = 100-age;
+            document.getElementById("kq").innerHTML= name + " sống " + a + " năm nữa thì 100 tuổi ";
+
+        }
+    </script> -->
+
+
+    <h1>CALCULATOR</h1>
+    <input type="text" name="" id="first">
+    <input type="text" name="" id="second">
+    <button onclick="cong()">Addition(+)</button>
+    <button onclick="tru()">Subtraction(-)</button>
+    <button onclick="nhan()">Multiplication(x)</button>
+    <button onclick="chia()">Division(/)</button>
+    <h1 id="kq"></h1>
+    <br>
+    <Script>
+         function cong(){
+            let a = +document.getElementById("first").value;
+            let b = +document.getElementById("second").value;
+            document.getElementById("kq").innerHTML= a+b;
+        }
+
+        function tru(){
+            let a = +document.getElementById("first").value;
+            let b = +document.getElementById("second").value;
+            document.getElementById("kq").innerHTML= a-b;
+        }
+
+        function nhan(){
+            let a = +document.getElementById("first").value;
+            let b = +document.getElementById("second").value;
+            document.getElementById("kq").innerHTML= a*b;
+        }
+
+        function chia(){
+            let a = +document.getElementById("first").value;
+            let b = +document.getElementById("second").value;
+            document.getElementById("kq").innerHTML= a/b;
+        }
+    </Script>
+</body>
+
+</html>
