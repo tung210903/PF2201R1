@@ -1,12 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+   
+
+    <!-- header -->
+    <div class="header" id="myHeader" style="background-color: #fff;">
+        <nav class="navbar">
+            <div class="d-flex h-100">
+                <div class="w-30 px-5 ">
+                    <img src="image\logo.png" alt="" style="margin-top: 18%;">
+                </div>
+
+                <div class="w-50" style="margin-bottom: 20px;">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Tìm kiếm sản phẩm ... "
+                            aria-label="search" style="width:600px; margin: 20px 0 0 350px;height: 50px;">
+                    </form>
+                </div>
+                <div class="w-20">
+                    <div class="container_swap">
+                        <div class="row" class="social-links">
+                            <div class="div_left">
+                                <h4> <a style="color: black;" href="#"> <i class="bi bi-person"></i>
+                                    </a></h4>
+                            </div>
+                            <div class="div_center">
+                                <!-- <button id="myBtn"><a style="color: black;" href="#"> <i class="bi bi-basket"></i>
+                                    </a></button><span id="countsp">0</span></a> -->
+                                <a onclick="showcart()"><i class="bi bi-basket"></i><span
+                                        style="font-size: 12px;padding-left: 10px;padding-top: 30px;"
+                                        id="countsp">0</span></a>
+                            </div>
+                            <div class="div_right">
+                                <h4 id="menuBtn"><a id="menu" href="#"><img src="image\menu.jpg" alt=""></a>
+                                </h4>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="showcart">
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>Hình</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Xoá</th>
+                </tr>
+                <tbody id="mycart">
     
+                </tbody>
+    
+            </table>
+            <a href="cart.html" style="padding-left:65%;padding-top: 150px;">Thanh Toán</a>
+            <button onclick="xoatatca()" style="margin-left:23% ;">Xoá tất cả</button>
+    
+        </div>
+
+        <header class="w-100" style="margin: 10px 0 15px 0;" class="header">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="#">Giới Thiệu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a style="color: black;" class="nav-link " href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Sản Phẩm </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Áo nam</a></li>
+                        <li><a class="dropdown-item" href="#">Quần nam</a></li>
+
+                        <li><a class="dropdown-item" href="#">Giày dép nam</a></li>
+                        <li><a class="dropdown-item" href="#">Phụ kiện nam</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link " href="cart.html">Giỏ hàng</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="#">Tin Tức</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="#">Tuyển Dụng </a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: black;" class="nav-link" href="#">Hệ Thống Cửa Hàng</a>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <div class="content">
+
+        <!-- <section id="sideNav">
+            <nav>
+                <ul>
+                    <li><a href="#myHeader">Trang chủ </a></li>
+                    <li><a href="#tuixach">Túi xách</a></li>
+                    <li><a href="#balo">Balo</a></li>
+                    <li><a href="#tintuc">Tin tức</a></li>
+                    <li><a href="#footer">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </section> -->
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="image\BANNER-WEB (1).jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="image\banner-web.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="image\web-copy.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+        <div class="card-group">
+            <div class="card">
+                <a href="#"><img style="width:100%;" src="image\img1.jpg" class="img" alt="..."></a>
+
+            </div>
+            <div class="card">
+                <a href="#"><img style="width:100%;" src="image\img2.jpg" class="img" alt="..."></a>
+
+            </div>
+            <div class="card">
+                <a href="#"><img style="width:100%;" src="image\img3.jpg" class="img" alt="..."></a>
+
+            </div>
+        </div>
+
+        <!-- Product -->
+        <h1 id="tuixach">Túi xách</h1>
+        <div class="row row-cols-1 row-cols-md-4 g-4" style="width:100%">
+            <div class="col">
+                <div class="card" style="border: none;">
+                    <img src="image\img4.jpg" class="card-img-top" alt="">
+                    <span class="intro1">Túi xách du lịch thời trang Glado TBG001 </span>
+                    <p class="intro2">220,000₫</p>
+                    <input class="intro3" type="number" name="soluong" min="1" max="10" value="1">
+                    <button class="intro4" onclick="themvaogiohang(this)">Đặt hàng</button>
+
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card" style="border: none;">
+                    <img src="image\img5.jpg" class="card-img-top" alt="">
+
+                    <p class="intro1">Túi xách du lịch DaH2 TNAM0005N màu đen</p>
+                    <p class="intro2">400,000₫
+                    </p>
+                    <input class="intro3" type="number" name="soluong" min="1" max="10" value="1">
+                    <button class="intro4" onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card" style="border: none;">
+                    <img src="image\img6.jpg" class="card-img-top" alt="">
+
+                    <p class="intro1">Túi đeo chéo 2 khóa Huy Hoàng</p>
+                    <p class="intro2">550,000₫</p>
+                    <input class="intro3" type="number" name="soluong" min="1" max="10" value="1">
+                    <button class="intro4" onclick="themvaogiohang(this)">Đặt hàng</button>
+
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card" style="border: none;">
+                    <img src="image\img8.jpg" class="card-img-top" alt="...">
+                    <p class="intro1">Túi xách du lịch DaH2 TNAM0005N màu nâu</p>
+                    <p class="intro2">350,000₫
+                    </p>
+                    <input class="intro3" type="number" name="soluong" min="1" max="10" value="1">
+                    <button class="intro4" onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+            </div>
+        </div>
+
+        <h1 id="balo">Balo</h1>
+        <div class="row row-cols-1 row-cols-md-4 g-4" style="width:100%">
+            <div class="col">
+                <div class="card" style="border: none;">
+                    <img src="image\img9.jpg" class="card-img-top" alt="">
+
+                    <p class="intro1">Túi xách du lịch thời trang Glado TBG001 </p>
+                    <p class="intro2">220,000₫</p>
+                    <input class="intro3" type="number" name="soluong" min="1" max="10" value="1">
+                    <button class="intro4" onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card" style="border: none;">
+                    <img src="image\img10.jpg" class="card-img-top" alt="">
+
+
+                    <p class="intro1">Túi xách du lịch DaH2 TNAM0005N màu đen</p>
+                    <p class="intro2">400,000₫
+                    </p>
+                    <input class="intro3" type="number" name="soluong" min="1" max="10" value="1">
+                    <button class="intro4" onclick="themvaogiohang(this)">Đặt hàng</button>
+
+
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card" style="border: none;">
+                    <img src="image\img11.jpg" class="card-img-top" alt="">
+
+                    <p class="intro1">Túi đeo chéo 2 khóa Huy Hoàng</p>
+                    <p class="intro2">550,000₫</p>
+                    <input class="intro3" type="number" name="soluong" min="1" max="10" value="1">
+                    <button class="intro4" onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="card" style="border: none;">
+                    <img src="image\img7.jpg" class="card-img-top" alt="...">
+
+                    <p class="intro1">Túi xách du lịch DaH2 TNAM0005N màu nâu</p>
+                    <p class="intro2">350,000₫
+                    </p>
+                    <input class="intro3" type="number" name="soluong" min="1" max="10" value="1">
+                    <button class="intro4" onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="margin-top:10%;">
+            <h1 id="tintuc">From the blog</h1>
+            <div class="card-group">
+                <div class="card" style="border: none;">
+                    <img src="image\ads1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex h-100">
+                            <div class="w-20">
+                                <p class="decor">14 JUN <br><b href="" class=" advertise">2018</b></p>
+                            </div>
+                            <div class="w-80" style="margin-left: 15px;">
+                                <b style="font-size: 14px;opacity: 0.8;">Cách lựa chọn balo</b>
+                                <p style="font-size: 14px;opacity: 0.8;">Balo là vật không thể thiếu trong cuộc đời của
+                                    ...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="border: none;">
+                    <img src="image\ads2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex h-100">
+                            <div class="w-20">
+                                <p class="decor">14 JUN <br><b class=" advertise" href="">2018</b></p>
+                            </div>
+                            <div class="w-80" style="margin-left: 15px;">
+                                <b style="font-size: 14px;opacity: 0.8;">Cách chọn mua balo cho mọi vóc dáng</b>
+                                <p style="font-size: 14px;opacity: 0.8;">Balo là vật không thể thiếu trong cuộc đời của
+                                    ...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="border: none;">
+                    <img src="image\ads3.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex h-100">
+                            <div class="w-20">
+                                <p class="decor">14 JUN <br><b class=" advertise" href="">2018</b></p>
+                            </div>
+                            <div class="w-80" style="margin-left: 15px;">
+                                <b style="font-size: 14px;opacity: 0.8;">Cách chọn túi xách nam</b>
+                                <p style="font-size: 14px;opacity: 0.8;">Balo là vật không thể thiếu trong cuộc đời của
+                                    ...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="d-flex h-100" id="footer" style=" background-color: #ECEDEF;margin-top:10%;">
+            <div class="w-50">
+                <img src="image\logo-2.jpg" alt="" style="padding: 20px 25px 25px 15px;background-color: #ECEDEF ;">
+                <button class="holder" href="#">Về chúng tôi </button>
+                <button class="holder" href="#"> Liên hệ </button>
+                <button class="holder" href="#">FAQs</button>
+                <button class="holder" href="#">Tuyển dụng </button>
+
+            </div>
+            <div class="w-50">
+                <p style="float: left;margin: 45px 0 0 420px;opacity: 0.5;font-size: 14px;"> Copyright by Web4s.com</p>
+                <h4 class="icon" style="margin: 45px 15px 0 15px;"><a href="#"><i id="img1"
+                            class="bi bi-facebook"></i></a>
+                </h4>
+                <h4 class="icon" style="margin-right:15px"><a href="#"><i id="img2" class="bi bi-twitter"></i></a></h4>
+                <h4 class="icon" style="margin-right:15px"><a href="#"><i id="img3" class="bi bi-google"></i></a></h4>
+                <h4 class="icon"><a href="#"><i id="img4" class="bi bi-messenger"></i></a></h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="giohang.js"></script>
 </body>
+
 </html>
